@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rose Day 🌹</title>
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(to top, #ff6f91, #ffc75f);
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    color: white;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 18px;
+    opacity: 0.95;
+}
+
+.rose {
+    width: 200px;
+    margin: 25px auto;
+    display: block;
+    cursor: pointer;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.07); }
+    100% { transform: scale(1); }
+}
+
+.secret {
+    display: none;
+    margin-top: 20px;
+    font-size: 18px;
+    line-height: 1.6;
+    background: rgba(255,255,255,0.25);
+    padding: 18px;
+    border-radius: 16px;
+}
+
+.heart {
+    position: absolute;
+    font-size: 18px;
+    animation: float 6s linear infinite;
+}
+
+@keyframes float {
+    0% { bottom: -10%; opacity: 0; }
+    50% { opacity: 1; }
+    100% { bottom: 110%; opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Happy Rose Day 🌹</h1>
+    <p>Tap the rose to reveal my secret ❤️</p>
+
+    <img class="rose"
+         src="https://images.unsplash.com/photo-1526045612212-70caf35c14df"
+         onclick="showSecret()">
+
+    <div class="secret" id="secretMessage">
+        🌹 Rama,<br><br>
+        This rose holds my quiet truth…<br><br>
+        Even across distance and time,<br>
+        my heart reaches only for you.<br><br>
+        You are my calm in chaos,<br>
+        my smile in silence,<br>
+        my forever choice.<br><br>
+        — Vishnu ❤️
+    </div>
+</div>
+
+<script>
+function showSecret() {
+    document.getElementById("secretMessage").style.display = "block";
+}
+
+// Floating hearts
+for (let i = 0; i < 20; i++) {
+    let heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (Math.random() * 3 + 4) + "s";
+    heart.style.fontSize = (Math.random() * 10 + 16) + "px";
+    document.body.appendChild(heart);
+}
+</script>
+
+</body>
+</html>
