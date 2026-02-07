@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Promise Day 🤍</title>
+
+<style>
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(to top, #fbc2eb, #a6c1ee);
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 420px;
+    text-align: center;
+    color: #ffffff;
+}
+
+h1 {
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 18px;
+    opacity: 0.95;
+}
+
+.image-box {
+    margin-top: 20px;
+}
+
+.image-box img {
+    width: 100%;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: transform 0.4s;
+}
+
+.image-box img:active {
+    transform: scale(0.97);
+}
+
+.promise {
+    display: none;
+    margin-top: 20px;
+    background: rgba(255,255,255,0.25);
+    padding: 18px;
+    border-radius: 16px;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.sparkle {
+    position: absolute;
+    font-size: 14px;
+    animation: float 6s linear infinite;
+}
+
+@keyframes float {
+    0% { bottom: -10%; opacity: 0; }
+    50% { opacity: 1; }
+    100% { bottom: 110%; opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Happy Promise Day 🤍</h1>
+    <p>Tap the picture… my promise is waiting 💫</p>
+
+    <div class="image-box">
+        <img src="promise.jpg" onclick="showPromise()">
+    </div>
+
+    <div class="promise" id="promiseText">
+        Rama 🤍<br><br>
+        Nannna I promise to stand by you<br>
+        in calm days and difficult ones.<br><br>
+        I promise to listen,<br>
+        to understand Maaa ,<br>
+        and to choose you — always.<br><br>
+        No matter where life takes us,<br>
+        my heart will find its way back to you Nanna.<br><br>
+        — Vishnu 💍
+    </div>
+</div>
+
+<script>
+function showPromise() {
+    document.getElementById("promiseText").style.display = "block";
+}
+
+// soft sparkles
+for (let i = 0; i < 18; i++) {
+    let s = document.createElement("div");
+    s.className = "sparkle";
+    s.innerHTML = "✨";
+    s.style.left = Math.random() * 100 + "vw";
+    s.style.animationDuration = (Math.random() * 3 + 4) + "s";
+    document.body.appendChild(s);
+}
+</script>
+
+</body>
+</html>
