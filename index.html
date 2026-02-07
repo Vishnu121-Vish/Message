@@ -1,113 +1,112 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Promise Day 🤍</title>
+
+<title>Happy Promise Day ❤️</title>
 
 <style>
 body {
     margin: 0;
-    min-height: 100vh;
-    background: linear-gradient(to top, #fbc2eb, #a6c1ee);
-    font-family: 'Segoe UI', sans-serif;
+    height: 100vh;
+    background: linear-gradient(180deg, #ffdde1, #ee9ca7);
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow-x: hidden;
+    font-family: 'Segoe UI', sans-serif;
+    overflow: hidden;
 }
 
-.container {
-    width: 90%;
-    max-width: 420px;
+/* Floating hearts */
+.heart {
+    position: absolute;
+    font-size: 22px;
+    animation: float 6s infinite ease-in;
+    opacity: 0.7;
+}
+
+@keyframes float {
+    0% { transform: translateY(100vh); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateY(-10vh); opacity: 0; }
+}
+
+/* Main card */
+.card {
     text-align: center;
-    color: #ffffff;
+    color: white;
+    padding: 20px;
 }
 
 h1 {
-    font-size: 34px;
+    font-size: 30px;
     margin-bottom: 10px;
 }
 
 p {
-    font-size: 18px;
-    opacity: 0.95;
+    font-size: 16px;
+    opacity: 0.9;
 }
 
-.image-box {
+/* Image */
+img {
+    width: 85%;
+    max-width: 280px;
+    border-radius: 18px;
     margin-top: 20px;
-}
-
-.image-box img {
-    width: 100%;
-    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.25);
     cursor: pointer;
-    transition: transform 0.4s;
+    transition: transform 0.3s;
 }
 
-.image-box img:active {
-    transform: scale(0.97);
+img:hover {
+    transform: scale(1.05);
 }
 
-.promise {
+/* Hidden promise */
+#promise {
     display: none;
     margin-top: 20px;
-    background: rgba(255,255,255,0.25);
-    padding: 18px;
-    border-radius: 16px;
-    font-size: 18px;
+    font-size: 17px;
     line-height: 1.6;
+    animation: fadeIn 1.2s ease;
 }
 
-.sparkle {
-    position: absolute;
-    font-size: 14px;
-    animation: float 6s linear infinite;
-}
-
-@keyframes float {
-    0% { bottom: -10%; opacity: 0; }
-    50% { opacity: 1; }
-    100% { bottom: 110%; opacity: 0; }
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<!-- Floating hearts -->
+<div class="heart" style="left:10%; animation-delay:0s;">❤️</div>
+<div class="heart" style="left:30%; animation-delay:1s;">💖</div>
+<div class="heart" style="left:50%; animation-delay:2s;">💕</div>
+<div class="heart" style="left:70%; animation-delay:3s;">💘</div>
+<div class="heart" style="left:90%; animation-delay:4s;">💗</div>
+
+<div class="card">
     <h1>Happy Promise Day 🤍</h1>
-    <p>Tap the picture… my promise is waiting 💫</p>
+    <p>Tap the picture… my promise is waiting ✨</p>
 
-    <div class="image-box">
-        <img src="promise.jpg" onclick="showPromise()">
-    </div>
+    <img src="promise.jpg" onclick="showPromise()">
 
-    <div class="promise" id="promiseText">
-        Rama 🤍<br><br>
-        Nannna I promise to stand by you<br>
-        in calm days and difficult ones.<br><br>
-        I promise to listen,<br>
-        to understand Maaa ,<br>
-        and to choose you — always.<br><br>
-        No matter where life takes us,<br>
-        my heart will find its way back to you Nanna.<br><br>
-        — Vishnu 💍
+    <div id="promise">
+        Nanna I promise to stand by you in every season,<br>
+        to choose you every single day,<br>
+        and to love you deeper with time 💍❤️<br><br>
+        Forever yours Nannaluuuuuuuuuuuuuuuuuuuuuuuuuuu,<br>
+        <b>Vishnu</b>
     </div>
 </div>
 
 <script>
 function showPromise() {
-    document.getElementById("promiseText").style.display = "block";
-}
-
-// soft sparkles
-for (let i = 0; i < 18; i++) {
-    let s = document.createElement("div");
-    s.className = "sparkle";
-    s.innerHTML = "✨";
-    s.style.left = Math.random() * 100 + "vw";
-    s.style.animationDuration = (Math.random() * 3 + 4) + "s";
-    document.body.appendChild(s);
+    document.getElementById("promise").style.display = "block";
 }
 </script>
 
