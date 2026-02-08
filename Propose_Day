@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Propose Day ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(180deg, #ff758c, #ff7eb3);
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Falling roses */
+.rose {
+    position: absolute;
+    font-size: 26px;
+    animation: fall 8s linear infinite;
+    opacity: 0.8;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-10vh) rotate(0deg);
+        opacity: 0;
+    }
+    20% { opacity: 1; }
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Main card */
+.card {
+    text-align: center;
+    color: white;
+    padding: 20px;
+    max-width: 90%;
+}
+
+h1 {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+p {
+    font-size: 16px;
+    opacity: 0.95;
+}
+
+/* Image */
+img {
+    width: 85%;
+    max-width: 280px;
+    border-radius: 20px;
+    margin-top: 20px;
+    box-shadow: 0 18px 35px rgba(0,0,0,0.3);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.05);
+}
+
+/* Secret message */
+#secret {
+    display: none;
+    margin-top: 20px;
+    font-size: 17px;
+    line-height: 1.6;
+    animation: fadeIn 1.2s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Falling roses -->
+<div class="rose" style="left:5%; animation-delay:0s;">🌹</div>
+<div class="rose" style="left:20%; animation-delay:2s;">🌹</div>
+<div class="rose" style="left:35%; animation-delay:4s;">🌹</div>
+<div class="rose" style="left:50%; animation-delay:1s;">🌹</div>
+<div class="rose" style="left:65%; animation-delay:3s;">🌹</div>
+<div class="rose" style="left:80%; animation-delay:5s;">🌹</div>
+<div class="rose" style="left:95%; animation-delay:6s;">🌹</div>
+
+<div class="card">
+    <h1>Happy Propose Day 💍</h1>
+    <p>Tap the picture… my heart has a question ❤️</p>
+
+    <img src="propose.jpg" onclick="revealMessage()">
+
+    <div id="secret">
+        From the moment you entered my life,<br>
+        every dream started making sense 💖<br><br>
+
+        Will you hold my hand,<br>
+        walk with me forever,<br>
+        and be mine — always? 💍🌹<br><br>
+
+        <b>With all my love,<br>
+        Vishnu 🤍</b>
+    </div>
+</div>
+
+<script>
+function revealMessage() {
+    document.getElementById("secret").style.display = "block";
+}
+</script>
+
+</body>
+</html>
