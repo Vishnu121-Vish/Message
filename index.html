@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Happy Valentine’s Day Nanaaa ❤️</title>
-
+<title>Happy Valentine’s Day Rama ❤️ Vishnu</title>
 <style>
 body {
     margin: 0;
@@ -33,7 +32,7 @@ h1 {
 }
 
 img {
-    width: 280px;
+    width: 300px;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.4);
     margin: 25px 0;
@@ -50,7 +49,7 @@ img {
 
 button {
     margin-top: 30px;
-    padding: 15px 35px;
+    padding: 12px 30px;
     font-size: 18px;
     border: none;
     border-radius: 30px;
@@ -81,8 +80,8 @@ button:hover {
 
 #secret {
     display: none;
-    margin-top: 30px;
-    font-size: 26px;
+    margin-top: 25px;
+    font-size: 24px;
     animation: fadeIn 2s;
 }
 
@@ -92,54 +91,47 @@ button:hover {
 }
 </style>
 </head>
-
 <body>
 
 <div class="container">
-    <h1>Happy Valentine’s Day Nanaaa ❤️</h1>
+    <h1>Happy Valentine’s Day Rama ❤️ Vishnu</h1>
 
-    <img src="image.jpg" alt="Our Love">
+    <!-- Add your image here -->
+    <img src="image.jpg" alt="Rama & Vishnu">
 
     <div class="message">
-        Na life lo ninnu kalisina moment nundi,  
-        naa prapancham motham marchipoyindi ❤️  
-
-        Nanaaa, nenu chusthe naa heart automatic ga calm aipothundi,  
-        naa mind entha busy unna, nee thought vaste anni silent aipothayi 💞  
-
-        Nuvvu naaku girlfriend matrame kaadu…  
-        naa best friend, naa strength, naa future, naa everything ❤️  
-
-        Ee okka vishayam nenu nijamga cheppali…  
-        I love you a lott Nanna Forever
+        Rama ❤️,  
+        You are my happiness, my heart, my everything.  
+        I may not be perfect, but with all that I have and all that I can,  
+        I promise to make you smile every day.  
+        Together, we will share every joy and face every challenge.  
+        You are my love, my life, and my forever. ❤️
     </div>
 
-    <button onclick="showSecret()">Click Here 💍</button>
+    <button onclick="showSecretAndPlay()">Click for a Special Message 💌</button>
 
     <div id="secret">
-        Nanaaa ❤️, Will you be mine forever? 💍  
+        Rama ❤️ Vishnu  
+        Will you be mine forever? 💍  
         <br><br>
-        I promise…  
-        Ninnu respect chestha.  
-        Ninnu protect chestha.  
-        Ninnu eppudu hurt cheyyanu.  
-        Prati rojuki ninnu inkonchem ekkuva love chestha ❤️  
-
-        I love you so much, Nanaaa… ippudu, eppudu, forever and ever.
+        I love you now, forever, and always. ❤️
     </div>
 </div>
 
 <!-- Background Music -->
-<audio autoplay loop>
+<audio id="bgMusic" loop>
     <source src="music.mp3" type="audio/mpeg">
 </audio>
 
 <script>
-function showSecret() {
+// Show secret message and play music on button click
+function showSecretAndPlay() {
     document.getElementById("secret").style.display = "block";
+    const music = document.getElementById("bgMusic");
+    music.play();
 }
 
-// Floating hearts
+// Floating hearts animation
 setInterval(() => {
     const heart = document.createElement("div");
     heart.className = "heart";
